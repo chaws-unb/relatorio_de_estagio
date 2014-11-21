@@ -1,0 +1,45 @@
+\part{Relaório de Estágio Supervisionado}
+\chapter{Introdução}
+O propósito deste documento é a apresentação do trabalho realizado para a disciplina de Estágio Supervisionado da Universidade de Brasília, Campus FGA, para o curso de Engenharia de Software (102512). A disciplina possui carga horária de duzentos e quarenta horas/aula e contribui para o aluno aplicar parte dos conhecimentos adiquiridos ao longo do curso.
+
+A oportunidade de executar o estágio apareceu pela oferta da vaga apresentada pelo Prof. Dr. Luiz A. L. Fontes, da Faculdade Gama, quando criou uma postagem na plataforma de compartilhamento da faculdade. Em seguida foi realizado um processo seletivo de currículo, Índice de Rendimento Acadêmico e conhecimentos técnicos necessários para a atividade.
+
+Este estágio em especial foi realizado nos Estados Unidos, na agência federal norte-americana NIST (\textit{National Institute of Standards and Techonoly}), que tem como objetivo trabalhar com a indústria para desenvolver e aplicar tecnologia, medições e padrões. Sendo composto por mais de três mil profissionais, o NIST possui metade dessa quantidade formada por profissionais estrangeiros contribuindo vertigionsamente por um conhecimento mais sólido e integrado.
+
+
+\chapter{A instituição}
+O NIST é dividido em diversos departamentos, entre eles o Departamento de Software e Sistemas, onde o estágio supervisionado foi realizado. O departamento foca na qualidade de produtos de software através de medições e colaborações com empresas atuando fortemente área de garantia de software. 
+
+\section{Informações}
+O NIST fica localizado em \textit{100 Bureau Dr, Gaithersburg, MD 20899}, Estados Unidos, telefone +1 301-975-2000.
+
+\section{\textit{SAMATE}}
+O SAMATE (\textit{Software Assurance Metrics and Tool Evaluation}), ou Métricas de Garantia de Software e Avaliação de Ferramentas, tem como objetivo bem definido melhorar a qualidade de ferramentas de Análise de Código voltadas para qualidade e segurança de software. O principal projeto em execução é o SATE (\textit{Static Analysis and Tool Exposition}) que reune as principais empresas mantenedoras de software para garantia de código em uma maratona de testes e avaliações com o objetivo único de trocar conhecimentos e experiências entre o mercado.
+
+
+\chapter{Desenvolvimento}
+Ao longo do estágio, foram desenvolvidas basicamente três atividades principais. A avaliação de \textit{warnings} para o SATE, a evolução da plataforma de casos de teste SRD, o desenvolvimento de uma suíte de testes mínima para testar a efetividade da CWE, entre outras atividades menores.
+
+
+\section{\textit{SATE}}
+O SATE (\textit{Static Analysis Tool Exposition}), <http://samate.nist.gov/SATE.html>, foi desenvolvido para promover interação entre pesquisas avançadas em análise de código e empresas atuantes no mercado. Resumidamente, pesquisadores do NIST estabelecem uma suite de casos de teste, composto por códigos fonte em C, C++, Java e PHP, contendo vulnerabilidades conhecidas e categorizadas. As empresas mantenedoras de ferramentas se inscrevem para poder analisar a suite de testes e apresentar os resultados da análise em cima dos códigos. Estes resultados são automáticos, ou seja, uma ferramenta analisou um trecho de código e apontou que há uma vulnerabilidade. Entretanto as ferramentas não são tão precisas e isso demanda que análise humana intervenha no processo para garantir o resultado da ferramenta. o NIST entra novamente nessa etapa, onde é feita amostragem dos resultados das empresas para que assim possam ser realizadas análise humana. 
+
+A atividade desenvolvida para o SATE foi a de analisar os resultados das ferramentas perante à trechos de códigos. Foram centenas de vulnerabilidades envolvidas nas análises, dentre elas estavam \textit{buffer-overflow}, \textit{HTTP Response Splitting}, \textit{SQL Injection}, \textit{OS Injection} e \textit{Cross-site Scripting}. As análises eram muito dificeis na maioria das vezes, forçando o aprendizado para complementar o aprendido em sala de aula.
+
+\section{\textit{SRD}}
+O SRD (\textit{SAMATE Reference Dataset}), <http://samate.nist.gov/SARD/>, é uma plataforma escrita em PHP para armazenar suites e casos de testes voltados para análise de códigos. Com mais de oitenta mil (80000) casos de teste, o SRD é uma referência quando se trata desse tipo de casos de teste. Cada caso de teste geralmente é escrito em C, C++, Java ou PHP e possui pelo menos uma vulnerabilidade conhecida. As vulnerabilidades são conhecidas e isso se torna útil quando uma ferramenta aponta ou não a vulnerabilidade no código. Os resultados podem ser divididos basicamente em dois grupos, acertos ou falso-positivos.
+
+A atividade realizada com o SRD foi refatorar parte dos códigos em PHP para correção de bugs e inserção de novas funcionalidades, como a busca por número de arquivos , tamanho dos arquivos, busca por conteúdo e nome de arquivos utilizando expressões regulares para filtrar casos de teste, entre outros.
+
+\section{\textit{CWE}}
+A CWE (\textit{Common Weakness Enumeration}), <http://cwe.mitre.org/>, é a categorização de vulnerabilidades conhecidas em software. O objetivo principal da CWE é estabelecer um dicionário comum ao se tratar de assuntos a falhas de software. Para tal, muitas ferramentas de análise de código utilizam dos termos da CWE para apresentar relatório de análises. É de extrema importância que a ferramenta apresente seus resultados de maneira que os clientes (desenvolvedores) entendam o que foi analisado.
+
+Com isso em mente, a atividade desenpenhada com a CWE foi a criação de uma suite de testes pequena, que contivesse vulnerabilidades conhecidas (para fins de escopo, somente \textit{buffer-overflow}). O objetivo é avaliar quão boa é uma ferramenta ao analisar a suite. Os testes são compostos não mais por 20 arquivos e cada um deles possui um nível de dificuldade. Ferramentas boas conseguiram capturar não todas, mas a maioria das vulnerabilidades e ferramentas não tão boas, conseguiram apontar poucas vulnerabilidades somente. O objetivo do tamanho pequeno da suite é permitir que clientes não experientes com o serviço de análise de código tenham conhecimento do nível de vulnerabilidades que determinadas ferramentas conseguem prevenir.
+
+
+\chapter{Conclusão}
+O tempo de trabalho no NIST foi essencial para abrir o campo de visão quando se fala de Garantia de Software, pois no Brasil esse termo é tratado fortemente como parte organizacional do processo de desenvolvimento de software, enquanto no ponto de vista norte-americano a metologia é a de que Garantia de Software vem de baixo, do principal ativo de um software: o código.
+
+Muito do que foi estudado nas disciplinas do curso de Engenharia de Software foi de fundamental importância para o acompanhamento nas atividades do estágio. O conhecimentos de sistemas operacionais, redes de computadores, estruturas de dados e algoritmos e paradigmas de programação foram essenciais para o bom aproveitamento e para contribuição para o grupo. Percebeu-se que para garantir a qualidade de um software é necessário entender muito bem o funcionamento de computador em termos técnicos para que assim seja possível escrever programas espertos que analisam programas convencionais.
+
+Concomitantemente ao estágio, a oportunidade de interagir com pessoas de diferentes partes do mundo é uma experiência incrível pois amplia a capacidade de enxergar conceitos antes vistos somente no Brasil. Foi possível observar as diferenças de conceito de Engenharia de Software em si.

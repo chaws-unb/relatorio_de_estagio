@@ -1,4 +1,4 @@
-TARGET = TCC_FGA.pdf
+TARGET = RelatorioDeEstagio_CharlesDanielDeOliveira.pdf
 
 BIBTEX = bibtex
 LATEX = latex
@@ -20,11 +20,11 @@ EDITAVEIS_SOURCES = informacoes.tex errata.tex dedicatoria.tex \
 					abreviaturas.tex simbolos.tex introducao.tex \
 					aspectosgerais.tex consideracoes.tex textoepostexto.tex \
 					elementosdotexto.tex elementosdopostexto.tex \
-					apendices.tex anexos.tex
+					apendices.tex anexos.tex texto_relatorio.tex
 
 EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
 
-MAIN_FILE = tcc.tex
+MAIN_FILE = relatorio.tex
 DVI_FILE  = $(addsuffix .dvi, $(basename $(MAIN_FILE)))
 AUX_FILE  = $(addsuffix .aux, $(basename $(MAIN_FILE)))
 PS_FILE   = $(addsuffix .ps, $(basename $(MAIN_FILE)))
